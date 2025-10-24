@@ -1,0 +1,585 @@
+.social-native-gallery-container #visualcomfort {
+    font-size: var(--body-font-size-xxl);
+    color: var(--color-outer-space);
+    margin: 10px 0 20px;
+}
+
+.social-native-gallery-wrapper {
+    margin-bottom: 20px;
+}
+
+.social-native-gallery.block {
+    --cols: 2;
+    --size: 142px;
+    margin-inline: calc((100% - (var(--size) * var(--cols) + (10px * (var(--cols) - 1)))) / 2);
+    overflow-x: hidden;
+}
+
+.social-native-gallery-grid {
+    box-sizing: border-box;
+    display: block;
+    margin-inline: auto;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    white-space: nowrap;
+}
+
+.social-native-gallery-grid::-webkit-scrollbar {
+    display: none;
+}
+
+.social-native-gallery-grid-item.social-native-image-upload {
+    width: 360px;
+    height: 170px;
+    display: inline-block;
+    position: relative;
+    border: 1px solid #ccc;
+}
+
+.image-upload-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.image-upload-text {
+    text-align: center;
+}
+
+.image-upload-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 1px solid #ccc;
+    a {
+        text-decoration: none;
+        padding: 8px 12px;
+        line-height: 100%;
+    }
+    a:hover {
+        text-decoration: none;
+        background: #717171;
+        color: #fff;
+        width: auto;
+        cursor: pointer;
+    }
+}
+
+.olapic .modal-body {
+    opacity: 0;
+    transition: opacity .15s linear;
+}
+
+div.modal.in {
+    position: fixed;
+    inset: 0;
+    z-index: 1050;
+    outline: 0;
+    background: #f9f9f9;
+    .modal-body {
+        opacity: 1;
+    }
+}
+
+.olapic .fade {
+    opacity: 0;
+    transition: opacity .15s linear;
+}
+
+.olapic .fade.in {
+    opacity: 1;
+}
+
+.olapic .close {
+    appearance: none;
+    padding: 0;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    font-size: 24px;
+    font-weight: bold;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    opacity: .2;
+    width: 100%;
+    height: 45px;
+    margin: 0;
+}
+
+.olapic .close:hover {
+    opacity: .5;
+}
+
+div.olapic .modal-header {
+    display: flex;
+    justify-content: center;
+    right: 0;
+}
+
+.olapic .modal-content {
+    position: relative;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgb(0 0 0 / 20%);
+    border-radius: 0;
+    outline: none;
+    box-shadow: 0 3px 9px rgb(0 0 0 / 50%);
+    width: 100%;
+    padding: 0;
+}
+
+@media screen and (min-width: 768px) {
+    .social-native-gallery.block {
+        --cols: 3;
+        --size: 210px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .social-native-gallery.block {
+        --cols: 5;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    .social-native-gallery.block {
+        --cols: 6;
+    }
+    .social-native-gallery-grid {
+        overflow-x: hidden;
+    }
+}
+
+.social-native-gallery-grid-item {
+    aspect-ratio: 1 / 1;
+    flex-shrink: 0;
+    display: inline-block;
+    margin-right: 10px;
+    overflow: hidden;
+    scroll-snap-align: start;
+    width: var(--size);
+}
+
+.social-native-gallery-grid-item:last-child {
+    margin-right: 0;
+}
+
+.social-native-gallery-grid-item button {
+    appearance: none;
+    background: transparent;
+    border: 0;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.social-native-gallery-grid-item button,
+.social-native-gallery-grid-item picture,
+.social-native-gallery-grid-item img {
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
+.social-native-gallery-grid-item img {
+    object-fit: cover;
+}
+
+.social-native-gallery-modal {
+    background: rgb(223 223 224 / 90%);
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+}
+
+@media screen and (min-width: 900px) {
+    .social-native-gallery-modal {
+        --min-height: 360px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .social-native-gallery-modal {
+        --min-height: 580px;
+    }
+}
+
+.social-native-gallery-modal button:focus:not(:focus-visible) {
+    outline: none;
+}
+
+.social-native-gallery-modal-nav,
+.product-nav {
+    align-items: center;
+    display: flex;
+    inset: 0;
+    justify-content: space-between;
+    position: absolute;
+}
+
+.social-native-gallery-modal-nav-panel,
+.product-nav-panel {
+    padding: 10px;
+}
+
+@media screen and (min-width: 900px) {
+    .social-native-gallery-modal-nav-panel {
+        align-items: center;
+        background: var(--color-white);
+        display: flex;
+        min-height: var(--min-height);
+        padding-inline: 30px;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    .social-native-gallery-modal-nav-panel {
+        padding-inline: 60px;
+    }
+}
+
+.social-native-gallery-modal-nav-button,
+.product-nav-button {
+    appearance: none;
+    background: #f9f9f9;
+    border: 0;
+    border-radius: 999px;
+    color: rgb(0 0 0 / 75%);
+    display: flex;
+    place-items: center;
+    padding: 6px;
+}
+
+.product-nav-button {
+    position: absolute;
+    top: 30%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 100;
+    appearance: none;
+    background: #f9f9f9;
+    border: 0;
+    border-radius: 999px;
+    color: rgb(0 0 0 / 75%);
+    display: flex;
+    place-items: center;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-native-gallery-modal-nav-button:hover,
+.product-nav-button:hover {
+    background: var(--color-gray);
+    color: var(--color-white);
+}
+
+.social-native-gallery-modal-nav-button svg,
+.product-nav-button svg {
+    --scale: 0.5;
+    display: block;
+    transform: scale(var(--scale));
+}
+
+@media screen and (min-width: 900px) {
+    .social-native-gallery-modal-nav-button svg,
+    .product-nav-button svg {
+        --scale: 0.8;
+    }
+}
+
+.social-native-gallery-modal-close {
+    appearance: none;
+    background: transparent;
+    border: 0;
+    color: var(--color-granite-gray);
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.social-native-gallery-modal-close svg {
+    display: block;
+    transform: scale(0.5);
+}
+
+.social-native-gallery-modal-content {
+    --panels-space: 180px;
+    background-color: var(--color-white);
+    left: 50%;
+    max-height: 85vh;
+    max-width: 960px;
+    min-height: var(--min-height);
+    padding: 30px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: calc(100% - var(--panels-space));
+}
+
+@media screen and (min-width: 900px) {
+    .social-native-gallery-modal-content {
+        --panels-space: 300px;
+    }
+}
+
+.social-native-gallery-modal-body {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+@media screen and (min-width: 900px) {
+    .social-native-gallery-modal-body {
+        display: grid;
+        grid-template-columns: 1.7fr 1fr;
+    }
+}
+
+.social-native-gallery-modal-info {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+@media screen and (min-width: 900px) {
+    .social-native-gallery-modal-info {
+        height: 100%;
+    }
+}
+
+.social-native-gallery-modal-post-link {
+    align-items: center;
+    color: var(--color-granite-gray);
+    display: inline-flex;
+    font-size: var(--body-font-size-xxs);
+    gap: 8px;
+    margin-bottom: 60px;
+}
+
+.social-native-gallery-modal-post-link:hover {
+    color: var(--color-granite-gray);
+    text-decoration: none;
+}
+
+@media screen and (min-width: 900px) {
+    .social-native-gallery-modal-post-link {
+        margin-bottom: 30px;
+    }
+}
+
+.social-native-gallery-modal-post-link svg {
+    display: block;
+    transform: scale(0.6);
+}
+
+.social-native-gallery-modal-image {
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    position: relative;
+}
+
+.social-native-gallery-modal-image img {
+    display: block;
+    height: 100%;
+    object-fit: contain;
+    width: 100%;
+}
+
+.social-native-gallery-modal-report-open {
+    appearance: none;
+    background: transparent;
+    border: 0;
+    bottom: 0;
+    color: var(--color-granite-gray);
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    right: 0;
+}
+
+.social-native-gallery-modal-report-open:hover {
+    color: var(--color-dark-charcoal);
+}
+
+.social-native-gallery-modal-report-form {
+    background-color: rgb(249 249 249 / 90%);
+    inset: 0;
+    padding: 15px;
+    position: absolute;
+    z-index: 1;
+}
+
+.social-native-gallery-modal-report-form:not(.show) {
+    display: none;
+}
+
+.social-native-gallery-modal-report-form p {
+    font-size: var(--body-font-size-xxxs);
+    color: var(--color-outer-space);
+    line-height: 2;
+    margin: 0;
+    text-wrap: balance;
+}
+
+.social-native-gallery-modal-report-form input[type="text"],
+.social-native-gallery-modal-report-form input[type="email"] {
+    border: 1px solid #e0e0e0;
+    box-sizing: border-box;
+    display: block;
+    font-family: inherit;
+    font-size: var(--body-odd-font-size-xxs);
+    padding: 15px;
+    margin-top: 25px;
+    width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+    .social-native-gallery-modal-report-form input[type="text"],
+    .social-native-gallery-modal-report-form input[type="email"] {
+        font-size: var(--body-font-size-xxs);
+        margin-top: 10px;
+        padding: 6px;
+    }
+}
+
+.social-native-gallery-modal-report-form .description {
+    @media screen and (max-width: 768px) {
+        display: none;
+    }
+}
+
+.social-native-gallery-modal-report-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 5px;
+    margin-top: 25px;
+}
+
+@media screen and (max-width: 768px) {
+    .social-native-gallery-modal-report-actions {
+        margin-top: 10px;
+    }
+}
+
+.social-native-gallery-modal-report-actions .social-native-gallery-modal-report-cancel,
+.social-native-gallery-modal-report-actions .social-native-gallery-modal-report-submit {
+    appearance: none;
+    border: 0;
+    display: inline-block;
+    font-family: inherit;
+    height: 40px;
+    margin: 0;
+    padding: 10px 30px;
+    text-transform: none;
+}
+
+@media screen and (max-width: 768px) {
+    .social-native-gallery-modal-report-actions .social-native-gallery-modal-report-cancel,
+    .social-native-gallery-modal-report-actions .social-native-gallery-modal-report-submit {
+        font-size: var(--body-font-size-xxs);
+        height: 30px;
+        padding: 4px 15px;
+    }
+}
+
+.social-native-gallery-modal-report-actions .social-native-gallery-modal-report-submit {
+    background-color: var(--color-gray);
+    color: var(--color-white);
+}
+
+.social-native-gallery-modal-report-actions .social-native-gallery-modal-report-cancel {
+    background-color: transparent;
+    color: rgb(0 0 0 / 75%);
+}
+
+.social-native-gallery-modal-report-message {
+    align-items: center;
+    display: flex;
+    gap: 10px;
+}
+
+.social-native-gallery-modal-report-message p {
+    margin: 0;
+}
+
+.social-native-gallery-modal-report-message svg {
+    display: block;
+    transform: scale(0.6);
+}
+
+.social-native-gallery-modal-product {
+    aspect-ratio: 1 / 1;
+    height: 150px;
+    display: block;
+    width: 150px;
+    margin: 0 auto 20px;
+}
+
+.social-native-gallery-modal-product img {
+    display: block;
+    height: 150px;
+    object-fit: contain;
+    width: 150px;
+}
+
+.social-native-gallery-modal-details {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+    height: 100%;
+}
+
+.social-native-gallery-modal-caption {
+    font-size: var(--body-font-size-s);
+    color: var(--color-dark-silver);
+    margin: 0;
+}
+
+.social-native-gallery-modal-modal-title {
+    color: var(--color-dark-charcoal);
+    font-family: var(--body-font-family);
+    font-size: var(--body-font-size-m);
+    letter-spacing: 2.5px;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+@media screen and (min-width: 768px) {
+    .social-native-gallery-modal-modal-title {
+        font-size: 30px;
+    }
+}
+
+.product-nav-button.prev {
+    left: 10px;
+}
+
+.product-nav-button.next {
+    right: 10px;
+}
+
+.product-nav-button svg {
+    --scale: 0.5;
+}
+
+a.social-native-gallery-modal-link {
+    aspect-ratio: 1 / 1;
+    height: 150px;
+    display: block;
+    width: 150px;
+    margin: 0 auto 20px;
+}

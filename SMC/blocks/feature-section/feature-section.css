@@ -1,0 +1,119 @@
+.feature-section {
+    padding: 80px 40px;
+    background-color: var(--background-color);
+}
+
+.feature-section-wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.feature-section .columns {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+}
+
+.feature-section .columns > div {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 48px;
+    align-items: center;
+}
+
+.feature-section .columns picture {
+    display: block;
+    width: 100%;
+}
+
+.feature-section .columns img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.feature-section .columns h2 {
+    font-family: var(--heading-font-family);
+    font-size: var(--heading-font-size-xl);
+    font-weight: 400;
+    line-height: 1.2;
+    margin: 0 0 24px;
+    text-align: left;
+}
+
+.feature-section .columns p {
+    font-family: var(--body-font-family);
+    font-size: var(--body-font-size-s);
+    line-height: 1.6;
+    color: var(--color-outer-space);
+    margin: 0 0 32px;
+}
+
+.feature-section .columns p:last-child {
+    margin-bottom: 0;
+}
+
+.feature-section .columns a {
+    display: inline-block;
+    padding: 12px 32px;
+    border: 1px solid var(--color-outer-space);
+    font-family: var(--body-font-family);
+    font-size: var(--body-font-size-xxs);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: background-color 0.2s ease;
+}
+
+.feature-section .columns a:hover {
+    background-color: var(--primary-hover-background);
+    text-decoration: none;
+}
+
+@media screen and (max-width: 1200px) {
+    .feature-section {
+        padding: 60px 32px;
+    }
+    
+    .feature-section .columns > div {
+        gap: 32px;
+    }
+
+    .feature-section .columns h2 {
+        font-size: var(--heading-font-size-l);
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .feature-section {
+        padding: 48px 24px;
+    }
+    
+    .feature-section .columns > div {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .feature-section .columns h2 {
+        font-size: var(--heading-font-size-m);
+        text-align: center;
+    }
+
+    .feature-section .columns p {
+        text-align: center;
+    }
+
+    .feature-section .columns p:last-child {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .feature-section {
+        padding: 40px 20px;
+    }
+
+    .feature-section .columns h2 {
+        font-size: var(--heading-font-size-s);
+    }
+}

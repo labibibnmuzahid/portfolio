@@ -1,0 +1,296 @@
+.columns-container {
+    display: grid;
+    place-content: center;
+    padding: 40px 40px;
+}
+
+/* Ensure standalone .columns blocks have bottom spacing when not wrapped by .columns-container */
+.columns {
+    /* increased default bottom spacing so sections have clearer separation */
+    padding-bottom: 64px;
+}
+
+/* Utility class: use this on any section that needs extra spacing */
+.section-spacing-large {
+    padding-bottom: 96px;
+}
+
+/* Vertical spacing utility for sections that need extra top and bottom space */
+.section-vertical-spacing-large {
+    padding-top: 96px;
+    padding-bottom: 96px;
+}
+
+@media screen and (max-width: 899px) {
+    .section-vertical-spacing-large {
+        padding-top: 64px;
+        padding-bottom: 64px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .section-vertical-spacing-large {
+        padding-top: 48px;
+        padding-bottom: 48px;
+    }
+}
+
+/* Bottom-only spacing specifically for the Spotlight section */
+.spotlight-bottom-space {
+    padding-bottom: 64px;
+}
+
+@media screen and (max-width: 899px) {
+    .spotlight-bottom-space {
+        padding-bottom: 48px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .spotlight-bottom-space {
+        padding-bottom: 32px;
+    }
+}
+
+/* Reduced bottom padding utility: keeps top spacing but reduces bottom for specific sections */
+.section-vertical-spacing-reduced-bottom {
+    padding-bottom: 48px; /* desktop */
+}
+
+@media screen and (max-width: 899px) {
+    .section-vertical-spacing-reduced-bottom {
+        padding-bottom: 32px; /* tablet */
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .section-vertical-spacing-reduced-bottom {
+        padding-bottom: 24px; /* mobile */
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .columns-wrapper {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+}
+
+.columns > div {
+    display: flex;
+    flex-direction: column;
+}
+
+.columns img {
+    width: 100%;
+}
+
+.columns > div > .columns-img-col {
+    width: 60%;
+}
+
+.columns > div > div:not(.columns-img-col) {
+    color: var(--color-outer-space);
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 40px;
+}
+
+.columns > div > div:not(.columns-img-col) p {
+    font-size: var(--body-font-size-s);
+    line-height: 1.6;
+    letter-spacing: 0.25px;
+    margin: 0 0 24px;
+}
+
+.columns > div > div:not(.columns-img-col) p:last-child {
+    margin-bottom: 0;
+}
+
+.columns > div > div:not(.columns-img-col) a {
+    display: inline-block;
+    padding: 12px 32px;
+    border: 1px solid var(--color-outer-space);
+    color: inherit;
+    font-weight: 600;
+    font-size: var(--body-font-size-xxs);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    transition: background-color 0.2s ease;
+}
+
+.columns > div > div:not(.columns-img-col) a:hover {
+    background-color: var(--primary-hover-background);
+    text-decoration: none;
+}
+
+.columns > div > div:not(.columns-img-col) h1,
+.columns > div > div:not(.columns-img-col) h2,
+.columns > div > div:not(.columns-img-col) h3,
+.columns > div > div:not(.columns-img-col) h4,
+.columns > div > div:not(.columns-img-col) h5,
+.columns > div > div:not(.columns-img-col) h6 {
+    font-family: var(--heading-font-family);
+    text-align: left;
+    font-weight: 400;
+    line-height: 1.2;
+    margin: 0 0 24px;
+}
+
+.columns > div > div:not(.columns-img-col) h2 {
+    font-size: var(--heading-font-size-xl);
+}
+
+.columns > div > .columns-img-col img {
+    display: block;
+}
+
+.columns.our-collection > div > div:not(.columns-img-col) a {
+    color: #454545;
+    font-weight: 400;
+}
+
+/* Landscape Collection specific styles */
+.columns > div > [data-valign="middle"] {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    padding: 0 40px;
+}
+
+.columns > div > [data-valign="middle"] h2 {
+    font-family: var(--heading-font-family);
+    font-size: var(--heading-font-size-xl);
+    font-weight: 400;
+    line-height: 1.2;
+    margin: 0 0 24px;
+}
+
+.columns > div > [data-valign="middle"] p {
+    font-size: var(--body-font-size-s);
+    line-height: 1.6;
+    margin: 0 0 32px;
+}
+
+.columns > div > [data-valign="middle"] p:last-child {
+    margin-bottom: 0;
+}
+
+.columns > div > [data-valign="middle"] img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+@media screen and (min-width: 900px) {
+    .columns > div {
+        align-items: center;
+        flex-direction: row;
+        gap: 48px;
+    }
+
+    .columns.twenty-eighty > div > div:first-child {
+        width: 20%;
+    }
+    .columns.twenty-eighty > div > div:nth-child(2) {
+        width: 80%;
+    }
+    .columns.eighty-twenty > div > div:first-child {
+        width: 80%;
+    }
+    .columns.eighty-twenty > div > div:nth-child(2) {
+        width: 20%;
+    }
+    .columns.our-collection > div > div:not(.columns-img-col) {
+        width: 50%;
+    }
+    .columns.our-collection > div {
+        align-items: baseline;
+    }
+}
+
+@media screen and (max-width: 899px) {
+    .columns-container {
+        padding: 48px 24px;
+    }
+
+    .columns > div > .columns-img-col {
+        width: 100%;
+    }
+
+    .columns > div > div {
+        margin: 24px 0;
+        padding: 0;
+    }
+
+    .columns > div > div:not(.columns-img-col),
+    .columns > div > [data-valign="middle"] {
+        width: 100%;
+        text-align: center;
+    }
+
+    .columns > div > div:not(.columns-img-col) h1,
+    .columns > div > div:not(.columns-img-col) h2,
+    .columns > div > div:not(.columns-img-col) h3,
+    .columns > div > div:not(.columns-img-col) h4,
+    .columns > div > div:not(.columns-img-col) h5,
+    .columns > div > div:not(.columns-img-col) h6,
+    .columns > div > [data-valign="middle"] h2 {
+        text-align: center;
+        font-size: var(--heading-font-size-l);
+    }
+
+    .columns > div > div:not(.columns-img-col) p,
+    .columns > div > [data-valign="middle"] p {
+        text-align: center;
+    }
+
+    /* Reverse order for landscape section on mobile */
+    .columns > div {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .columns > div > [data-valign="middle"]:first-child {
+        order: 2;
+    }
+
+    .columns > div > [data-valign="middle"]:last-child {
+        order: 1;
+        margin-bottom: 24px;
+    }
+}
+
+/* Reduce bottom spacing for smaller screens */
+@media screen and (max-width: 899px) {
+    .columns {
+        /* scale down from desktop but keep ample spacing on tablet */
+        padding-bottom: 48px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .columns {
+        /* mobile spacing */
+        padding-bottom: 32px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .columns-container {
+        padding: 40px 20px;
+    }
+
+    .columns > div > div:not(.columns-img-col) h2,
+    .columns > div > [data-valign="middle"] h2 {
+        font-size: var(--heading-font-size-m);
+    }
+
+    .columns > div > div:not(.columns-img-col) p,
+    .columns > div > [data-valign="middle"] p {
+        font-size: var(--body-font-size-xs);
+    }
+}

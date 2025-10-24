@@ -1,0 +1,318 @@
+.cards-container {
+    display: grid;
+    place-content: center;
+}
+
+/* Spacing under the 'Explore Our Products' header */
+#explore-our-products {
+    margin-bottom: 24px;
+}
+
+@media screen and (min-width: 900px) {
+    #explore-our-products {
+        margin-bottom: 32px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .cards-wrapper {
+        max-width: 1400px;
+    }
+}
+
+.cards>ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-gap: 24px 16px;
+}
+
+.cards.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 24px;
+}
+
+@media screen and (min-width: 900px) {
+    .cards.grid-2 {
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 32px;
+    }
+}
+
+.cards .cards-card-image {
+    /* remove inline whitespace and tighten spacing under picture */
+    line-height: 0;
+}
+
+.cards>ul>li img {
+    width: 100%;
+    /* ensure image doesn't leave descender whitespace */
+    display: block;
+    /* aspect-ratio: 1; */
+    object-fit: contain;
+    /* small bottom gap to separate image from label */
+    margin-bottom: 8px;
+}
+
+.cards .cards-card-body {
+    color: var(--color-outer-space);
+}
+
+.cards .cards-card-body a {
+    color: inherit;
+    font-size: var(--body-font-size-xxs);
+    line-height: 24px;
+    letter-spacing: 0.6px;
+    overflow-wrap: break-word;
+    text-size-adjust: 100%;
+}
+
+/* Reduce padding for links inside cards so they are less bulky */
+.cards .cards-card-body a,
+.cards .cards-card-image a {
+    padding: 6px 8px;
+}
+
+.cards .cards-card-body a.single {
+    font-size: var(--body-font-size-s);
+    font-weight: 600;
+}
+
+.cards .cards-card-body h5 {
+    text-align: unset;
+    margin-top: 1rem;
+}
+
+/* Specific styling for the "Design your space" feature and grid-2 cards */
+#design-your-space-with-layers-of-light,
+.cards.grid-2 .cards-card-body h5 {
+    font-family: var(--heading-font-family);
+    /* use px because root font-size is adjusted in the project */
+    font-size: 36px;
+    line-height: 1.15;
+    font-weight: 400;
+    margin: 18px 0 12px;
+    color: var(--color-outer-space);
+}
+
+.cards.grid-2 .cards-card-body a {
+    display: inline-block;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+}
+
+/* Slightly taller images for the two-column feature layout */
+.cards.grid-2>ul>li img {
+    max-height: 420px;
+    object-fit: cover;
+}
+
+/* Responsive tweaks for the feature grid */
+@media screen and (min-width: 900px) {
+    #design-your-space-with-layers-of-light {
+        font-size: 24px;
+    }
+    .cards.grid-2>ul {
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 32px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #design-your-space-with-layers-of-light,
+    .cards.grid-2 .cards-card-body h5 {
+        font-size: 28px;
+        text-align: center;
+    }
+    .cards.grid-2 .cards-card-body {
+        text-align: center;
+    }
+    .cards.grid-2>ul>li img {
+        max-height: 300px;
+    }
+}
+
+.cards .cards-card-body p.button-container a {
+    margin: 0;
+}
+
+.cards .cards-card-body p {
+    font-size: var(--body-font-size-xxs);
+    letter-spacing: 0.25px;
+    margin: 0;
+}
+
+/* grid-4 */
+
+/* grid-4 */
+.cards.grid-4>ul {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 24px 16px;
+}
+
+/* Responsive adjustments for grid-4 */
+@media screen and (max-width: 1200px) {
+    .cards.grid-4>ul {
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 24px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .cards.grid-4>ul {
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 24px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .cards.grid-4>ul {
+        grid-template-columns: 1fr;
+        grid-gap: 16px;
+    }
+}
+
+/* grid-3 */
+
+.cards.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 32px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 32px;
+}
+
+.cards.grid-3>div {
+    display: flex;
+    flex-direction: column;
+}
+
+.cards.grid-3 [data-align="center"] {
+    margin-bottom: 24px;
+}
+
+.cards.grid-3 [data-align="center"] img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+}
+
+.cards.grid-3 .cards-card-body {
+    flex: 1;
+}
+
+.cards.grid-3 .cards-card-body h5 {
+    font-size: 24px;
+    line-height: 1.3;
+    margin-bottom: 16px;
+}
+
+.cards.grid-3 .cards-card-body p {
+    font-size: var(--body-font-size-xs);
+    line-height: 1.5;
+    margin-bottom: 16px;
+}
+
+.cards.grid-3 .cards-card-body a {
+    font-weight: 600;
+    text-transform: none;
+}
+
+@media screen and (max-width: 1024px) {
+    .cards.grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0 24px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .cards.grid-3 {
+        grid-template-columns: 1fr;
+        padding: 0 16px;
+        grid-gap: 24px;
+    }
+    
+    .cards.grid-3 [data-align="center"] img {
+        height: 240px;
+    }
+}
+
+/* grid-2 */
+
+.cards.grid-2>ul,
+.cards.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 24px;
+}
+
+@media screen and (min-width: 900px) {
+    .cards.grid-2>ul,
+    .cards.grid-2 {
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 32px;
+    }
+}
+
+/* text-center */
+
+.cards.text-center .cards-card-body {
+    text-align: center;
+}
+
+/* text-left-align */
+
+.cards.text-left-align .cards-card-body {
+    text-align: start;
+}
+
+.cards.text-left-align .cards-card-body h5 {
+    font-family: var(--heading-font-family);
+    font-size: 36px;
+    line-height: 1.15;
+    font-weight: 400;
+    margin: 18px 0 12px;
+    color: var(--color-outer-space);
+}
+
+@media screen and (min-width: 900px) {
+    .cards.text-left-align .cards-card-body h5 {
+        font-size: 44px;
+    }
+    
+    .cards.text-left-align .cards-card-body {
+        max-width: 420px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .cards.text-left-align .cards-card-body {
+        text-align: center;
+    }
+    
+    .cards.text-left-align .cards-card-body h5 {
+        font-size: 28px;
+        text-align: center;
+    }
+}
+
+/* text-right-align */
+
+.cards.text-right-align .cards-card-body {
+    text-align: end;
+}
+
+@media screen and (max-width: 768px) {
+    .cards.grid-4>ul,
+    .cards.grid-3>ul,
+    .cards.grid-2>ul {
+        /* Force a single column layout on small screens for predictability */
+        grid-template-columns: 1fr;
+        grid-gap: 16px;
+    }
+}
